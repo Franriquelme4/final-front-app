@@ -1,7 +1,9 @@
 import { View,Flex ,Text,Button} from 'native-base'
 import React from 'react'
+import { useNavigate } from 'react-router-native'
 
 const DatosProductosItem = ({id,nombre,codigo,precio,onDelete}) => {
+    const navigate = useNavigate();
     const eliminarProducto = () => {
         if (onDelete) {
             onDelete(id);

@@ -10,6 +10,7 @@ import Clientes from "./src/screens/Clientes/Clientes"
 import AgregarCategoriasProductos from "./src/screens/CategoriaProductos/AgregarCategoriasProductos"
 import EditarCategoriasProductos from "./src/screens/CategoriaProductos/EditarCategoriasProductos"
 import AgregarDatosProductos from "./src/screens/DatosProductos/AgregarDatosProductos"
+import EditarDatosProductos from "./src/screens/DatosProductos/EditarDatosProductos"
 
 export default Main = ()=>{
     return (
@@ -22,7 +23,7 @@ export default Main = ()=>{
                     <Route path='/categorias/editar/:id' element={<EditarCategoriasProductos/>}/>
                     <Route path='/datos-productos' element={<DatosProductos/>}/>
                     <Route path='/datos-productos/agregar' element={<AgregarDatosProductos/>}/>
-                    <Route path='/datos-productos/editar/:id' element={<EditarCategoriasProductos/>}/>
+                    <Route path='/datos-productos/editar/:id' element={<EditarDatosProductos/>}/>
                     <Route path='/clientes' element={<Clientes/>}/>
                     <Route path='/ventas' element={<Ventas/>}/>
                 </Routes>
