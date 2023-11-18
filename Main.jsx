@@ -7,6 +7,9 @@ import CategoriaProductos from "./src/screens/CategoriaProductos/CategoriaProduc
 import DatosProductos from "./src/screens/DatosProductos/DatosProductos"
 import Ventas from "./src/screens/Ventas/Ventas"
 import Clientes from "./src/screens/Clientes/Clientes"
+import AgregarCategoriasProductos from "./src/screens/CategoriaProductos/AgregarCategoriasProductos"
+import EditarCategoriasProductos from "./src/screens/CategoriaProductos/EditarCategoriasProductos"
+import AgregarDatosProductos from "./src/screens/DatosProductos/AgregarDatosProductos"
 
 export default Main = ()=>{
     return (
@@ -15,7 +18,11 @@ export default Main = ()=>{
                 <Routes>
                     <Route path='/' element={<Home/>}/>
                     <Route path='/categorias' element={<CategoriaProductos/>}/>
+                    <Route path='/categorias/agregar' element={<AgregarCategoriasProductos/>}/>
+                    <Route path='/categorias/editar/:id' element={<EditarCategoriasProductos/>}/>
                     <Route path='/datos-productos' element={<DatosProductos/>}/>
+                    <Route path='/datos-productos/agregar' element={<AgregarDatosProductos/>}/>
+                    <Route path='/datos-productos/editar/:id' element={<EditarCategoriasProductos/>}/>
                     <Route path='/clientes' element={<Clientes/>}/>
                     <Route path='/ventas' element={<Ventas/>}/>
                 </Routes>
