@@ -59,7 +59,6 @@ const storeData = async (value) => {
         if (categoria.id == id) {
           return categoria
         }
-       
       });
       return categoria || {};
     } catch (e) {

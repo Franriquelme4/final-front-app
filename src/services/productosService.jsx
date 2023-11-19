@@ -46,3 +46,39 @@ export const deleteProductoById = async (id) => {
     console.log(e);
   }
 };
+
+export const getProductoById = async (id)=>{
+  try {
+    const productos = await getData();
+    const producto = productos.find((producto) =>{
+      if (producto.id == id) {
+        return producto
+      }
+    });
+    return producto || {};
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
+}
+
+export const editProducto = async (editedProducto) => {
+  try {
+    let productos = await getData();
+    if (productos) {
+      const index = productos.findIndex(
+        (producto) => producto.id == editedProducto.id
+      );
+
+      console.log(index,"index");
+
+      if (index !== -1) {
+        productos[index] = editedProducto;
+        await storeData(productos);
+      }
+    }
+  } catch (e) {
+    console.log(e);
+    throw e;
+  }
+};
