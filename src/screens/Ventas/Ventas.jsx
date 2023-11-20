@@ -3,6 +3,7 @@ import { Heading, View, Text, Button, ScrollView } from 'native-base';
 import { useNavigate } from 'react-router-native';
 import BackToMenu from '../../components/BackToMenu';
 import { getVentas } from '../../services/ventasService';
+import { handleGeneratePDF } from '../../services/reportesService';
 
 export default function Ventas() {
   const navigate = useNavigate();
@@ -35,6 +36,10 @@ export default function Ventas() {
               <Text>RUC: {venta.ruc}</Text>
               <Text>Cantidad de productos: {venta.productos.length}</Text>
               <Text>Total: {venta.total} Gs.</Text>
+              <Button colorScheme="secondary" mt={2} onPress={() => handleGeneratePDF(venta)}>
+                Descargar Factura
+              </Button>
+
             </View>
           ))}
         </View>
