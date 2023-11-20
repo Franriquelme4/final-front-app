@@ -27,7 +27,7 @@ export default function Ventas() {
         </Button>
 
         <View>
-          {ventas.map((venta) => (
+          {ventas?.map((venta) => (
             <View key={venta.id} mt={2} borderWidth={1}
               borderRadius={10}
               borderColor='gray.300' p={2}>
