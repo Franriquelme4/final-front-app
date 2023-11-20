@@ -42,6 +42,18 @@ export const getCliente = async (id) => {
   return clientes[index];
 };
 
+export const getClienteRuc = async (ruc) => {
+  let clientes = await getClientes();
+  if (!clientes) {
+    return; // No hay clientes
+  }
+
+  const index = clientes.findIndex((c) => c.ruc === ruc);
+  return clientes[index];
+};
+
+
+
 export const eliminarCliente = async (id) => {
   let clientes = await getClientes();
   if (!clientes) {
