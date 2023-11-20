@@ -11,7 +11,9 @@ export default function Ventas() {
   useEffect(() => {
     (async () => {
       const allVentas = await getVentas();
-      setVentas(allVentas);
+      if (Array.isArray(allVentas)) { // Check if allVentas is an array
+        setVentas(allVentas);
+      }
     })();
   }, []);
 
@@ -27,8 +29,8 @@ export default function Ventas() {
         <View>
           {ventas.map((venta) => (
             <View key={venta.id} mt={2} borderWidth={1}
-            borderRadius={10}
-            borderColor='gray.300' p={2}>
+              borderRadius={10}
+              borderColor='gray.300' p={2}>
               <Text>ID: {venta.id}</Text>
               <Text>RUC: {venta.ruc}</Text>
               <Text>Cantidad de productos: {venta.productos.length}</Text>
