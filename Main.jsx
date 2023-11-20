@@ -12,6 +12,7 @@ import EditarCategoriasProductos from "./src/screens/CategoriaProductos/EditarCa
 import AgregarDatosProductos from "./src/screens/DatosProductos/AgregarDatosProductos"
 import EditarDatosProductos from "./src/screens/DatosProductos/EditarDatosProductos"
 import ClienteNew from './src/screens/Clientes/ClientesNew';
+import AgregarVentas from "./src/screens/Ventas/AgregarVentas"
 
 export default Main = ()=>{
     return (
@@ -28,6 +29,7 @@ export default Main = ()=>{
                     <Route path='/datos-productos/editar/:id' element={<EditarDatosProductos/>}/>
                     <Route path='/clientes' element={<Clientes/>}/>
                     <Route path='/ventas' element={<Ventas/>}/>
+                    <Route path='/ventas/agregar' element={<AgregarVentas/>}/>
                 </Routes>
             </View>
         </SafeAreaView>
